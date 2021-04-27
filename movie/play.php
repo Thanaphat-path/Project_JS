@@ -1,14 +1,14 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$dbname = "movie";
+include('connect.php');
+$id = $_GET['id'];
+$query = mysqli_query($con,"SELECT * FROM data_movie WHERE id =$id");
+$result = mysqli_fetch_array($query);
 ?>
 
 <html>
 
 <head>
-    <title> Movie </title>
+    <title><?=$result['name']?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </head>
@@ -89,18 +89,18 @@ $dbname = "movie";
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="./">หน้าแรก</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">ดาบพิฆาตอสูร เดอะมูฟวี่ : ศึกรถไฟสู่นิรันดร์</li>
+                    <li class="breadcrumb-item active" aria-current="page"><?=$result['name']?></li>
                 </ol>
             </nav>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col-md-3">
                     <div class="card mb-4 shadow-sm">
-                        <img src="img/01.jpg" while="100%" height="380" class="card-img-top" />
+                        <img src="<?=$result['img']?>" while="100%" height="380" class="card-img-top" />
                     </div>
                 </div>
                 <div class="col-md-9">
                     <div class="card shadow-sm">
-                        <iframe width="100%" height="380" src="https://www.youtube.com/embed/_ntCsO8N7jA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="380" src="https://www.youtube.com/embed/<?=$result['vdo_ex']?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@ $dbname = "movie";
                 <div class="col-md-12">
                     <div class="card shadow-sm text-center"style="background-color: #9e2222!important;"><h3>Player</h3></div>
                         <div class="card mb-4 shadow-sm">
-                            <iframe width="100%" height="623" src="https://www.youtube.com/embed/_ntCsO8N7jA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="100%" height="623" src="https://www.youtube.com/embed/<?=$result['vdo_main']?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>

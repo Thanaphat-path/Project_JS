@@ -1,12 +1,16 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$dbname = "movie";
+include('connect.php');
+$num_rows = mysqli_num_rows(mysqli_query($con, "SELECT * FROM data_movie"));
 
-$con = mysqli_connect($host,$user,$pass,$dbname);
-mysqli_query($con,"set char set utf8");
+$limit_page = 4;
+$page = @$_GET['Page'] ? $_GET['Page'] : 1;
 
+$num_page = $num_rows / $limit_page;
+if (!($num_page == (int)$num_page))
+    $num_page = (int)$num_page + 1;
+    if ($page > $num_page)
+    $page = $num_page;
+$limit_start = ($page * $limit_page) - $limit_page
 ?>
 
 <html>
@@ -28,7 +32,7 @@ mysqli_query($con,"set char set utf8");
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">หน้าแรก</a>
+                        <a class="nav-link active" aria-current="page" href="./">หน้าแรก</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">ยอดนิยม</a>
@@ -97,17 +101,17 @@ mysqli_query($con,"set char set utf8");
                 </ol>
             </nav>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <?php 
+                <?php
 
-                $query = mysqli_query($con,"SELECT * FROM data_movie");
-                while($result = mysqli_fetch_array($query)){
+                $query = mysqli_query($con, "SELECT * FROM data_movie ORDER BY id DESC LIMIT $limit_start,$limit_page");
+                while ($result = mysqli_fetch_array($query)) {
                 ?>
                     <div class="col-md-3">
                         <div class="card shadow-sm">
-                            <a href="./play.php?id=<?=$result['id']?>">
-                                <img src=<?=$result['img']?> while="100%" height="380" class="card-img-top" />
+                            <a href="./play.php?id=<?= $result['id'] ?>">
+                                <img src=<?= $result['img'] ?> while="100%" height="380" class="card-img-top" />
                                 <div class="card-body">
-                                    <p class="card-text text-center"><?=$result['name']?></p>
+                                    <p class="card-text text-center"style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><?= $result['name'] ?></p>
                                 </div>
                             </a>
                         </div>
@@ -115,22 +119,110 @@ mysqli_query($con,"set char set utf8");
                 <?php } ?>
             </div>
             <br>
-                <nav aria-label="...">
-                    <ul class="pagination justify-content-center">
+            <nav aria-label="...">
+                <ul class="pagination justify-content-center">
+                    <!------------------------------------------------------------------->
+                    <?php
+                    if ($page <= 1) {
+                    ?>
                         <li class="page-item disabled">
-                            <span class="page-link">Previous</span>
+                            <span class="page-link">ก่อน</span>
                         </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active" aria-current="page">
-                            <span class="page-link">2</span>
+                    <?php
+                    } else {
+                    ?>
+                        <li class="page-item ">
+                            <a class="page-link" href="?Page=<?= $page - 1 ?>">ก่อน</a>
                         </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
+                    <?php
+
+                    }
+                    ?>
+                    <!------------------------------------------------------------------->
+                    <?php
+                    if ($page > 2) {
+                    ?>
+                        <li class="page-item ">
+                            <a class="page-link" href="?Page=1">1</a>
                         </li>
-                    </ul>
-                </nav>
-           
+                        <li class="page-item disabled">
+                            <a class="page-link">...</a>
+                        </li>
+                    <?php
+                    }
+                    ?>
+
+                    <!------------------------------------------------------------------->
+
+                    <?php
+                    
+                    if($page >= 2){
+                        if ($page <= 2) {
+                            $num_start = 1;
+                            $num_stop = 2;
+                        } elseif ($page > $num_page - 1) {
+                            $num_start = $num_page - 1;
+                            $num_stop = $num_page;
+                        } else {
+                            $num_start = $page - 1;
+                            $num_stop = $page + 1;
+                        }
+                    }else{
+                        $num_start = 1;
+                        $num_stop = $num_page;
+                    }
+                   
+                    for ($i = $num_start; $i <= $num_stop; $i++) {
+                        if ($page == $i) {
+                    ?>
+                            <li class="page-item active" aria-current="page">
+                                <span class="page-link"><?= $i ?></span>
+                            </li>
+                        <?php
+                        } else {
+                        ?>
+                            <li class="page-item"><a class="page-link" href="?Page=<?= $i ?>"><?= $i ?></a></li>
+                    <?php
+                        }
+                    }
+                    ?>
+
+                    <!------------------------------------------------------------------->
+                    <?php
+                    if ($page < $num_page - 1) {
+                    ?>
+                        <li class="page-item disabled">
+                            <a class="page-link">...</a>
+                        </li>
+                        <li class="page-item ">
+                            <a class="page-link" href="?Page=<?= $num_page ?>"><?= $num_page ?></a>
+                        </li>
+
+                    <?php
+                    }
+                    ?>
+                    <!------------------------------------------------------------------->
+                    <?php
+                    if ($page >= $num_page) {
+                    ?>
+                        <li class="page-item disabled">
+                            <span class="page-link">หลัง</span>
+                        </li>
+                    <?php
+                    } else {
+                    ?>
+                        <li class="page-item ">
+                            <a class="page-link" href="?Page=<?= $page + 1 ?>">หลัง</a>
+                        </li>
+                    <?php
+
+                    }
+                    ?>
+
+                    <!------------------------------------------------------------------->
+                </ul>
+            </nav>
+
         </div>
     </div>
     <footer class="blog-footer text-center" style="padding: 5px;background-color: #414d74;">
