@@ -27,12 +27,12 @@ const connectToMongoDB= async ()=>{
       console.log('Conmected to mongodb!')
 
       // เพิ่ม data //
-      const user ={
+      /*const user ={
         email:'test3@gmail.com',
         username:'test4',
         password:'test4'
       }
-      await new userSchema(user).save()
+      await new userSchema(user).save()*/
 
       // ค้นหา //
       /*const result = await userSchema.find({

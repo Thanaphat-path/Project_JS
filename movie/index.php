@@ -1,4 +1,8 @@
 <?php
+
+if (isset($_POST['Btnindex'])) {
+  $userid = $_POST['id'];
+
 include('connect.php');
 $num_rows = mysqli_num_rows(mysqli_query($con, "SELECT * FROM data_movie"));
 
@@ -231,3 +235,7 @@ $limit_start = ($page * $limit_page) - $limit_page
 </body>
 
 </html>
+<?php
+}else {
+  echo "<script>window.location.href = 'login/login.php';</script>";
+} ?>
