@@ -5,14 +5,14 @@ const path = require("path")
 const fs = require('fs')
 const bodyParser = require('body-parser')
 const { Mongoose } = require('mongoose')
-const cons = require('cons')
+
+
 const mongo =require('../mongo')
 
 const { getMaxListeners } = require('../schemas/user_schemas')
 const userSchema =require('../schemas/user_schemas')
 
 app.use(bodyParser.json())
-app.use(cors());
 
 app.get('/', (req, res) => {
   const filename = path.join(__dirname, 'index1.html')
