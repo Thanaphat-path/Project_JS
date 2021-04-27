@@ -5,26 +5,21 @@ const path = require("path")
 const fs = require('fs')
 const bodyParser = require('body-parser')
 const { Mongoose } = require('mongoose')
-const mongo =require('./mongo')
+const cons = require('cons')
+const mongo =require('../mongo')
 
-const { getMaxListeners } = require('./schemas/user_schemas')
-const userSchema =require('./schemas/user_schemas')
+const { getMaxListeners } = require('../schemas/user_schemas')
+const userSchema =require('../schemas/user_schemas')
 
 app.use(bodyParser.json())
+app.use(cors());
 
 app.get('/', (req, res) => {
-  const filename = path.join(__dirname, 'index.html')
+  const filename = path.join(__dirname, 'index1.html')
   const indexData = fs.readFileSync(filename)
   res.end(indexData)
   //res.send('hello world')
 })
-
-/*const handler = (req, res) => {
-  const filename = path.join(__dirname, 'index.html')
-  const indexData = fs.readFileSync(filename)
-  res.end(indexData)
-}
-const server = http.createServer(handler)*/
 
 const connectToMongoDB= async ()=>{
   await mongo().then( async(Mongoose) =>{
@@ -32,18 +27,18 @@ const connectToMongoDB= async ()=>{
       console.log('Conmected to mongodb!')
 
       // เพิ่ม data //
-      /*const user ={
+      const user ={
         email:'test3@gmail.com',
-        username:'test3',
-        password:'test3'
+        username:'test4',
+        password:'test4'
       }
-      await new userSchema(user).save()*/
+      await new userSchema(user).save()
 
       // ค้นหา //
-      const result = await userSchema.find({
+      /*const result = await userSchema.find({
         //field:'value'ตัวอย่าง >> 
         password:'test'
-      })
+      })*/
       //console.log('Result:',result)
 
       //updateOne คือ เปลียนแค่ตัวบนสุด ,updateMany คือ เปลียนทุกอันที่ค้นหาเจอ //
@@ -67,18 +62,6 @@ const connectToMongoDB= async ()=>{
   })
 }
 connectToMongoDB()
-
-const app1 =({
-  data() {
-      return {
-          product: 'Socks',
-          // Solution
-          description: 'A warm fuzzy pair of socks.' 
-          // Solution
-      }
-  }
-})
-
 
 app.listen(3000, function () {
   console.log("server running on port 3000");
