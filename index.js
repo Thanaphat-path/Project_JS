@@ -3,13 +3,14 @@ const app = express()
 
 const path = require("path")
 const fs = require('fs')
-
+const bodyParser = require('body-parser')
 const { Mongoose } = require('mongoose')
 const mongo =require('./mongo')
 
 const { getMaxListeners } = require('./schemas/user_schemas')
 const userSchema =require('./schemas/user_schemas')
 
+app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
   const filename = path.join(__dirname, 'index.html')
@@ -39,10 +40,10 @@ const connectToMongoDB= async ()=>{
       await new userSchema(user).save()*/
 
       // ค้นหา //
-      /*const result = await userSchema.find({
+      const result = await userSchema.find({
         //field:'value'ตัวอย่าง >> 
         password:'test'
-      })*/
+      })
       //console.log('Result:',result)
 
       //updateOne คือ เปลียนแค่ตัวบนสุด ,updateMany คือ เปลียนทุกอันที่ค้นหาเจอ //
