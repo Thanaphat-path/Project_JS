@@ -5,7 +5,7 @@ var bodyParser = require("body-parser");
 
 var mongo_uri ='mongodb+srv://admin:8QnwGw3c8yFnAfLU@cluster0.jixbg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose.Promise = global.Promise;
-mongoose.connect(mongo_uri, { useNewUrlParser: true ,}).then(
+mongoose.connect(mongo_uri, { useNewUrlParser: true ,useUnifiedTopology: true}).then(
   () => {
     console.log("[success] task 2 : connected to the database ");
   },

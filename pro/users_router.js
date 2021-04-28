@@ -1,10 +1,10 @@
 var express = require("express");
 var router = express.Router();
-var users = require("./users_model");
+var user = require("./users_model");
 
 // GET all
 router.get("/", (req, res) => {
-  users.find().exec((err, data) => {
+  user.find().exec((err, data) => {
     if (err) return res.status(400).send(err);
     res.status(200).send(data);
   });
@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
 
 // GET 1
 router.get("/:_id", (req, res) => {
-  users.findById(req.params._id).exec((err, data) => {
+  user.findById(req.params._id).exec((err, data) => {
     if (err) return res.status(400).send(err);
     res.status(200).send(data);
   });
@@ -20,7 +20,7 @@ router.get("/:_id", (req, res) => {
 
 // POST (create new data)
 router.post("/", (req, res) => {
-  var obj = new users(req.body);
+  var obj = new user(req.body);
   obj.save((err, data) => {
     if (err) return res.status(400).send(err);
     res.status(200).send("เพิ่มข้อมูลเรียบร้อย");
@@ -29,7 +29,7 @@ router.post("/", (req, res) => {
 
 // PUT (update current data)
 router.put("/:_id", (req, res) => {
-  users.findByIdAndUpdate(req.params._id, req.body, (err, data) => {
+  user.findByIdAndUpdate(req.params._id, req.body, (err, data) => {
     if (err) return res.status(400).send(err);
     res.status(200).send("อัพเดทข้อมูลเรียบร้อย");
   });
@@ -37,7 +37,7 @@ router.put("/:_id", (req, res) => {
 
 // DELETE (delete 1 data)
 router.delete("/:_id", (req, res) => {
-  users.findByIdAndDelete(req.params._id, (err, data) => {
+  user.findByIdAndDelete(req.params._id, (err, data) => {
     if (err) return res.status(400).send(err);
     res.status(200).send("ลบข้อมูลเรียบร้อย");
   });
