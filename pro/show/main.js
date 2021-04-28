@@ -8,12 +8,15 @@ getmovie()
 async function getUser(){
     let i =0
     let orderObj = await axios.get(apiUser)
-    setUser.innerHTML = orderObj.data[i].username
-
+    function nextuser(){
+        setUser.innerHTML = orderObj.data[i].username
+    }
+    nextuser()
 }
 async function getmovie(){
     let i =0
-    let orderObj = await axios.get(apimovie)
-    setmovie.innerHTML = orderObj.data[i].name
+    var movieObj = await axios.get(apimovie)
+    let picture =movieObj.data[i].name
+    setmovie.innerHTML = picture
 
 }
