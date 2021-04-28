@@ -12,17 +12,17 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #396086!important;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./">Movie</a>
+            <a class="navbar-brand" href="../show/index.html">Movie</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./">หน้าแรก</a>
+                        <a class="nav-link active" aria-current="page" href="../show/index.html">หน้าแรก</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ยอดนิยม</a>
+                        <a class="nav-link" href="#">ดูชื่อทั้งหมด</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -38,7 +38,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="#">เพิ่มหนัง</a>
+                        <a class="nav-link " href="../newmovie/new.html">เพิ่มหนัง</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -82,20 +82,17 @@
 
 
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="./">หน้าแรก</a></li>
-                    <li class="breadcrumb-item active" aria-current="page"><?=$result['name']?></li>
-                </ol>
+
             </nav>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col-md-3">
                     <div class="card mb-4 shadow-sm">
-                        <img src="<?=$result['img']?>" while="100%" height="380" class="card-img-top" />
+                        <img src="../movie/img_movie/01.jpg" while="100%" height="380" class="card-img-top" />
                     </div>
                 </div>
                 <div class="col-md-9">
                     <div class="card shadow-sm">
-                        <iframe width="100%" height="380" src="https://www.youtube.com/embed/<?=$result['vdo_ex']?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="380" src="https://www.youtube.com/embed/ATJYac_dORw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -103,7 +100,7 @@
                 <div class="col-md-12">
                     <div class="card shadow-sm text-center"style="background-color: #9e2222!important;"><h3>Player</h3></div>
                         <div class="card mb-4 shadow-sm">
-                            <iframe width="100%" height="623" src="https://www.youtube.com/embed/<?=$result['vdo_main']?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="100%" height="623" src="https://www.youtube.com/embed/lgTSB4SYOL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
