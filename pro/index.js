@@ -32,8 +32,11 @@ app.get("/", (req, res) => {
 });
 
 // path สำหรับ MongoDB ของเรา
-var users = require("./users_router");
+var users = require("./router/users_router");
+var movie = require("./router/movie_router");
+
 app.use("/api/users", users);
+app.use("/api/name-movie", movie);
 
 app.use((req, res, next) => {
   var err = new Error("ไม่พบ path ที่คุณต้องการ");

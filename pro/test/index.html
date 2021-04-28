@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Vue Card Component</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- 
+@desc: Inspired by the AniChart Card Components. project to learn VueJs.
+coded by: RubyGems
+-->
+
+
+<div class="container" id="anime">
+
+  <div class="likes">
+
+    <div class="heart-icon">
+      <svg data-v-1e613282="" version="1.1" viewBox="0 0 18 18" class="svg-icon" style=""><path stroke="rgb(var(--color-red))"  pid="0" d="M15.63 3.458a4.125 4.125 0 0 0-5.835 0L9 4.253l-.795-.795A4.126 4.126 0 1 0 2.37 9.293l.795.795L9 15.922l5.835-5.835.795-.795a4.125 4.125 0 0 0 0-5.835v0z" _stroke="#EF5C5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </div>
+    <div class="likes-count">
+      0 likes
+    </div>
+
+  </div>
+
+  <div class="card flex">
+    <div class="card-image">
+      <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108759-jcXbDf9BJTcb.jpg" alt="">
+      <div class="cover">
+        <div class="img-overlay">
+          <a href="" class="title">
+          Sword Art Online: Alicization - War of Underworld
+        </a>
+
+          <div class="studio">
+            <a href="">A-1 Pictures</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-content">
+
+      <a href="">Airing On</a>
+      <h1>{{anime.fantasy[0].airingDate}}</h1>
+
+      <div class="description">
+        <p>The Soul Translator is a state-of-the-art full-dive interface which interacts with the user's Fluctlight—the technological equivalent of a human soul—and fundamentally differs from the orthodox method of sending signals to the brain. </p>
+      </div>
+
+      <div class="cta">
+        <button>
+          watch now
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container" id="anime">
+
+    <div class="likes">
+  
+      <div class="heart-icon">
+        <svg data-v-1e613282="" version="1.1" viewBox="0 0 18 18" class="svg-icon" style=""><path stroke="rgb(var(--color-red))"  pid="0" d="M15.63 3.458a4.125 4.125 0 0 0-5.835 0L9 4.253l-.795-.795A4.126 4.126 0 1 0 2.37 9.293l.795.795L9 15.922l5.835-5.835.795-.795a4.125 4.125 0 0 0 0-5.835v0z" _stroke="#EF5C5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </div>
+      <div class="likes-count">
+        0 likes
+      </div>
+  
+    </div>
+  
+    <div class="card flex">
+      <div class="card-image">
+        <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108759-jcXbDf9BJTcb.jpg" alt="">
+        <div class="cover">
+          <div class="img-overlay">
+            <a href="" class="title">
+            Sword Art Online: Alicization - War of Underworld
+          </a>
+  
+            <div class="studio">
+              <a href="">A-2 Pictures</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card-content">
+  
+        <a href="">Airing On</a>
+        <h1>{{anime.fantasy[0].airingDate}}</h1>
+  
+        <div class="description">
+          <p>The Soul Translator is a state-of-the-art full-dive interface which interacts with the user's Fluctlight—the technological equivalent of a human soul—and fundamentally differs from the orthodox method of sending signals to the brain. </p>
+        </div>
+  
+        <div class="cta">
+          <button>
+            watch now
+          </button>
+        </div>
+  
+      </div>
+  
+    </div>
+  <!--  Selection  -->
+  <div class="anime-selection">
+    <h1 class="heading">Select a genre</h1>
+    <div class="selection-items">
+      <div @click="setActive" class="selection-item active" :class='{active:active}'>fantasy</div>
+      <div class="selection-item">action</div>
+      <div class="selection-item">adventure</div>
+
+    </div>
+
+  </div>
+
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
