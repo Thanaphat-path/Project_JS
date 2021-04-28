@@ -5,6 +5,7 @@ let setUser = document.querySelector(".set-user");
 let setmovie = document.querySelector(".set-movie");
 getUser()
 getmovie()
+
 async function getUser(){
     let i =0
     let orderObj = await axios.get(apiUser)
