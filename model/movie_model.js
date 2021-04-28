@@ -8,10 +8,10 @@ var movie_schema = mongoose.Schema(
       img: {
         type: String,
       },
-      nvdo_ex: {
+      vdo_ex: {
         type: String,
       },
-      nvdo_main: {
+      vdo_main: {
         type: String,
       },
     },{
