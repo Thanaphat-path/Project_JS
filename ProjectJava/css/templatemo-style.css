@@ -14,6 +14,11 @@ body {
 	overflow-x: hidden;
 }
 
+.page-content img {
+    max-width: 50%;
+    height: auto!important;
+}
+
 .tm-white { color: #FFFFFF; }
 
 ul { padding: 0; margin: 0; }

@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 
-<script src="https://unpkg.com/axios/dist/axios.min.js%22%3E"></script>
-<script src=".\connect.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./connect.js"></script>
+<script src="./functions.js"></script>
 
 <html lang="en">
+
+<style type="text/css">
+img1.img-resize{
+    height:600px;
+    width : auto;
+}
+div.img-resize {
+    width:600px;
+    height: 600px;
+    overflow: hidden;
+    text-align: center;
+}
+</style>
     
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>เช่าหนัง</title>
+    <title>Movie</title>
 
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  
@@ -93,10 +107,12 @@
                                     </div>
                                     <div class="grid-item">
                                         <figure class="effect-ruby">
-                                            <img src="img/tm-img-11-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <div class="page-content">
+                                                <img src="img/tm-img-11.jpg" alt="Image" class="img-fluid tm-img">
+                                            </div>
                                             <figcaption>
-                                                <h1 class='set-movie'></h1>
-                                                <h2 class="tm-figure-title"></h2>
+                                                <!--<h1 class="set-movie"></h1>-->
+                                                <h2 class="set-movie"></h2>
                                                 <p class="tm-figure-description">Suspendisse id placerat risus. Mauris quis luctus risus.</p>
 
                                                 <a href="https://www.youtube.com/watch?v=pmanD_s7G3U">View more</a>
@@ -105,6 +121,7 @@
                                     </div>
                                     <div class="grid-item">
                                         <figure class="effect-ruby">
+                                            <h1 class="set-movie"></h1>
                                             <img src="img/tm-img-12-tn.jpg" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title">Picture <span>Two</span></h2>
