@@ -1,5 +1,5 @@
-let apiUser ="http://127.0.0.1:5000/api/users"
-let apimovie ="http://127.0.0.1:5000/api/name-movie"
+let apiUser ="http://movie.app.ruk-com.cloud/api/users"
+let apimovie ="http://movie.app.ruk-com.cloud/api/name-movie"
 
 let setUser = document.querySelector(".set-user");
 let setmovie1 = document.querySelector(".set-movie1");
