@@ -19,8 +19,6 @@ const addmovie_schema = {
     vdo_main:String,
   };
 
-
-
   const addmovie = mongoose.model("name-movie", addmovie_schema);
 
   app.post("/", function (req, res) {
