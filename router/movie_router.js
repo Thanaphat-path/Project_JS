@@ -43,8 +43,13 @@ router.get("/:_id", (req, res) => {
 });
 
 // POST (create new data)
+<<<<<<< HEAD
 router.post("/",upload.single('image') , async  (req, res) => {
   console.log(request.file);
+=======
+
+/*router.post("/", (req, res) => {
+>>>>>>> fe7ca8702eb11ccbaae9f9c659afc97b9606deac
   const objForInsert = new movie({
     name: req.body.name,
     //img: req.body.img,
@@ -52,12 +57,11 @@ router.post("/",upload.single('image') , async  (req, res) => {
     vdo_main: req.body.vdo_main,
     img:request.file.filename,
   });
-
   objForInsert.save((err, data) => {
     if (err) return res.status(400).send(err);
     res.status(200).send("เพิ่มข้อมูลเรียบร้อย");
   });
-});
+});*/
 
 // PUT (update current data)
 router.put("/:_id", (req, res) => {
