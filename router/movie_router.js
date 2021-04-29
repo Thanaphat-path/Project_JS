@@ -23,8 +23,8 @@ router.post("/", (req, res) => {
   const objForInsert = new movie({
     name: req.body.name,
     img: req.body.imgName,
-    vdo_ex: req.body.vdoex,
-    vdo_main: req.body.vdomain,
+    vdo_ex: req.body,
+    vdo_main: req.body.vdo_main,
   });
 
   objForInsert.save((err, data) => {
