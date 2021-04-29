@@ -20,7 +20,8 @@ router.get("/:_id", (req, res) => {
 });
 
 // POST (create new data)
-router.post("/", (req, res) => {
+
+/*router.post("/", (req, res) => {
   const objForInsert = new movie({
     name: req.body.name,
     img: req.body.img,
@@ -31,7 +32,7 @@ router.post("/", (req, res) => {
     if (err) return res.status(400).send(err);
     res.status(200).send("เพิ่มข้อมูลเรียบร้อย");
   });
-});
+});*/
 
 // PUT (update current data)
 router.put("/:_id", (req, res) => {

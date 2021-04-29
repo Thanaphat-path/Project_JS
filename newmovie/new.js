@@ -23,10 +23,10 @@ clickNext.addEventListener("click", function () {
 
   app.post('/',function(req, res){
       new movie({
-      name: req.body.namemovie,
-      img: req.body.img,
-      vdo_ex: req.body.ex,
-      vdo_main: req.body.mainvdo,
+      name: req.namemovie,
+      img: req.img,
+      vdo_ex: req.ex,
+      vdo_main: req.mainvdo,
     }).save(function(err,doc){
       if(err)res.json(err);
       else res.send('SuccessFully inserted')

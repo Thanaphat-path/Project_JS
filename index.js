@@ -31,6 +31,11 @@ app.get("/", (req, res) => {
   res.status(200).send("หน้าแรกของ api express");
 });
 
+app.post('/', (req, res)=>{
+
+  console.log(JSON.stringify(req.fields));
+});
+
 // path สำหรับ MongoDB ของเรา
 var users = require("./router/users_router");
 var movie = require("./router/movie_router");
@@ -43,3 +48,5 @@ app.use((req, res, next) => {
   err.status = 404;
   next(err);
 });
+
+
