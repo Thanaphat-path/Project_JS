@@ -43,6 +43,7 @@
 </body>
 </html>
   <script>
+
     axios.post('http://movie.app.ruk-com.cloud/api/name-movie', 
     { 
         name:document.getElementById('name'), 
@@ -54,4 +55,11 @@
         // Config
     }
 );
+
+const objForInsert = new movie({
+    name: req.body.name,
+    img: req.body.img,
+    vdo_ex: req.body.vdo_ex,
+    vdo_main: req.body.vdo_main,
+  });
 </script>
