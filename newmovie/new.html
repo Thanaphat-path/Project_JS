@@ -8,14 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-    <form ipaction="./new.html" method="post">
+    <form ipaction="/" method="post">
         <div class="imgcontainer">
          <h1></h1>
         </div>
       
         <div class="container">
           <label for="uname"><b>namemovie</b></label>
-          <input type="text" placeholder="" name="name" >
+          <input id="name" type="text" placeholder="" name="name" >
 
           <label for="uname"><b>imgmovie</b></label>
           <input type="text" placeholder="" name="img" >
@@ -36,8 +36,22 @@
         <a href=javascript:history.back(1)>ย้อนกลับ</th></a>
         <!-- <script src="./new.js"></script> -->
         <script src="../index.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js%22%3E"></script>
+
 
       </form>
 </body>
 </html>
-
+  <script>
+    axios.post('http://movie.app.ruk-com.cloud/api/name-movie', 
+    { 
+        name:document.getElementById('name'), 
+        img: 'testt',
+        vdo_ex:'test',
+        vdo_main:'test',
+    }, 
+    {
+        // Config
+    }
+);
+</script>

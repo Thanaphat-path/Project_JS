@@ -20,8 +20,14 @@ router.get("/:_id", (req, res) => {
 
 // POST (create new data)
 router.post("/", (req, res) => {
-  var obj = new movie(req.body);
-  obj.save((err, data) => {
+  const objForInsert = new movie({
+    name: req.body.name,
+    img: req.body.imgName,
+    vdo_ex: req.body.vdoex,
+    vdo_main: req.body.vdomain,
+  });
+
+  objForInsert.save((err, data) => {
     if (err) return res.status(400).send(err);
     res.status(200).send("เพิ่มข้อมูลเรียบร้อย");
   });
