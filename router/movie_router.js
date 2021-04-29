@@ -27,7 +27,6 @@ router.post("/", (req, res) => {
     vdo_ex: req.body.vdo_ex,
     vdo_main: req.body.vdo_main,
   });
-
   objForInsert.save((err, data) => {
     if (err) return res.status(400).send(err);
     res.status(200).send("เพิ่มข้อมูลเรียบร้อย");
