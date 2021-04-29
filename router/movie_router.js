@@ -22,10 +22,10 @@ router.get("/:_id", (req, res) => {
 // POST (create new data)
 router.post("/", (req, res) => {
   const objForInsert = new movie({
-    name: req.body.name,
-    img: req.body.imgName,
+    name: req.body,
+    img: req.body,
     vdo_ex: req.body,
-    vdo_main: req.body.vdo_main,
+    vdo_main: req.body,
   });
 
   objForInsert.save((err, data) => {
