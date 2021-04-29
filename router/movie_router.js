@@ -1,4 +1,5 @@
 var express = require("express");
+const bodyParser = require('body-parser')
 var router = express.Router();
 var movie = require("../model/movie_model");
 
@@ -20,8 +21,13 @@ router.get("/:_id", (req, res) => {
 
 // POST (create new data)
 router.post("/", (req, res) => {
-  var obj = new movie(req.body);
-  obj.save((err, data) => {
+  const objForInsert = new movie({
+    name: req.body.name,
+    img: req.body.img,
+    vdo_ex: req.body.vdo_ex,
+    vdo_main: req.body.vdo_main,
+  });
+  objForInsert.save((err, data) => {
     if (err) return res.status(400).send(err);
     res.status(200).send("เพิ่มข้อมูลเรียบร้อย");
   });

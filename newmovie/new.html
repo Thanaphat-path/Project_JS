@@ -1,43 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <form ipaction="./new.html" method="post">
-        <div class="imgcontainer">
-         <h1></h1>
-        </div>
-      
-        <div class="container">
-          <label for="uname"><b>namemovie</b></label>
-          <input type="text" placeholder="" name="name" >
+  </head>
 
-          <label for="uname"><b>imgmovie</b></label>
-          <input type="text" placeholder="" name="img" >
-      
-          <label for="psw"><b>vdo_ex</b></label>
-          <input type="text" placeholder="" name="ex" >
+  <body>
+    <form action="/newmovie/new.html" method="get">
+      <label for="uname"><b>namemovie</b></label>
+      <input id="name" type="text" placeholder="" name="name_" />
 
-          <label for="uname"><b>vod_main</b></label>
-          <input type="text" placeholder="" name="mainvdo">
-      
-          <button type="submit">เพิ่ม</button>
-          
-        </div>
-        <div class="container" style="background-color:#f1f1f1">
-          <button type="button" class="cancelbtn">Cancel</button>
-          
-        </div>
-        <a href=javascript:history.back(1)>ย้อนกลับ</th></a>
-        <!-- <script src="./new.js"></script> -->
-        <script src="../index.js"></script>
+      <label for="uname"><b>imgmovie</b></label>
+      <input type="text" placeholder="" id="img" name="img" />
 
-      </form>
-</body>
+      <label for="psw"><b>vdo_ex</b></label>
+      <input type="text" placeholder="" id="ex" name="ex" />
+
+      <label for="uname"><b>vod_main</b></label>
+      <input type="text" placeholder="" name="mainvdo" id="mainvdo" />
+
+      <button type="submit" class="clickkk">เพิ่ม</button>
+    </form>
+    <a href=javascript:history.back(1)>ย้อนกลับ</th></a>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="new.js"></script>
+  </body>
 </html>
-
