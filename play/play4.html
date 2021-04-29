@@ -24,16 +24,16 @@
                  
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            หมวดหมู่
+                            ชื่อหนังทั้งหมด
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">พากย์ไทย</a></li>
-                            <li><a class="dropdown-item" href="#">ซัพไทย</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">การ์ตูน</a></li>
+                            <li><a class="dropdown-item set-movie1" href="../play/play1.html"></a></li>
+                            <li><a class="dropdown-item set-movie2" href="../play/play2.html"></a></li>
+                            <li><a class="dropdown-item set-movie3" href="../play/play3.html"></a></li>
+                            <li><a class="dropdown-item set-movie4" href="../play/play4.html"></a></li>
+                            <li><a class="dropdown-item set-movie5" href="../play/play5.html"></a></li>              
                         </ul>
+                    </li>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="../newmovie/new.html">เพิ่มหนัง</a>
@@ -96,7 +96,7 @@
             </div>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col-md-12">
-                    <div class="card shadow-sm text-center"style="background-color: #9e2222!important;"><h3>Player</h3></div>
+                    <div class="card shadow-sm text-center"style="background-color: #9e2222!important;"><h3 class='set-movie4'></h3></div>
                         <div class="card mb-4 shadow-sm">
                             <iframe width="100%" height="623" src="https://www.youtube.com/embed/37zP-XE16gc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
@@ -109,7 +109,8 @@
         <footer class="blog-footer text-center" style="padding: 5px;background-color: #414d74;">
             <p style="margin:0; color:aliceblue">เช่าดูหนังออนไลน์ ที่นี้เลย<a href="./" style="color:#ff9e9e"> Movie </a></p>
         </footer>
-
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="main.js"></script>
 
 </body>
 </html>

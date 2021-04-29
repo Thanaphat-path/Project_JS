@@ -1,10 +1,9 @@
-let apiUser ="http://movie.app.ruk-com.cloud/api/users"
 let apimovie ="http://movie.app.ruk-com.cloud/api/name-movie"
-let setmovie1 = document.querySelector(".set-movie1");
-let setmovie2 = document.querySelector(".set-movie2");
-let setmovie3 = document.querySelector(".set-movie3");
-let setmovie4 = document.querySelector(".set-movie4");
-let setmovie5 = document.querySelector(".set-movie5");
+let setmovie1 = document.querySelector(".movie1");
+let setmovie2 = document.querySelector(".movie2");
+let setmovie3 = document.querySelector(".movie3");
+let setmovie4 = document.querySelector(".movie4");
+let setmovie5 = document.querySelector(".movie5");
 
 getmovie1()
 getmovie2()
