@@ -1,4 +1,4 @@
-let apimovie = "http://movie.app.ruk-com.cloud/api/name-movie/";
+let apimovie = "http://javap.app.ruk-com.cloud/api/name-movie/";
 let clickNext = document.querySelector(".clickkk");
 const { default: axios } = require("axios");
 var movie = require("../model/movie_model");
