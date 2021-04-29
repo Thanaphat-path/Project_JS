@@ -43,23 +43,3 @@ app.use((req, res, next) => {
   err.status = 404;
   next(err);
 });
-
-/*const addmovie_schema = {
-  name: String,
-  img :String,
-  vdo_ex:String,
-  vdo_main:String,
-};
-
-const addmovie = mongoose.model("name-movie", addmovie_schema);
-
-app.post("/", function (req, res) {
- let NewMem = new addmovie({
-            name: req.body.name,
-            img: req.body.img,
-            vdo_ex: req.body.ex,
-            vdo_main: req.body.mainvdo,
-          });
-          NewMem.save();
-
-});*/
