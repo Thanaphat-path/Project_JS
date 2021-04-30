@@ -1,13 +1,12 @@
 var express = require("express");
 const bodyParser = require('body-parser')
 var router = express.Router();
-const multer = require('multer') 
+//const multer = require('multer') 
 var movie = require("../model/movie_model");
 
 const { request } = require("express");
 
-
-const storage = multer.diskStorage({
+/*const storage = multer.diskStorage({
   destination: function (request,file,callback){
       callback(null, './newmovie/upload/images');
   },
@@ -16,14 +15,14 @@ const storage = multer.diskStorage({
     callback(null,Date.now()+file.originalname);
   },
 });
+*/
 
-
-const upload = multer({
+/*const upload = multer({
   storage: storage,
   limits: {
     fieldSize: 1024 * 1024 * 3,
   },
-});
+});*/
 
 
 // GET all
@@ -43,7 +42,7 @@ router.get("/:_id", (req, res) => {
 });
 
 // POST (create new data)
-router.post("/",upload.single('image') , async  (req, res) => {
+router.post("/", async  (req, res) => {
   console.log(request.file);
   const objForInsert = new movie({
     name: req.body.name,
