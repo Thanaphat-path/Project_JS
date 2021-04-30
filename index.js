@@ -3,7 +3,7 @@ var cors = require("cors");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 
-var mongo_uri ='mongodb+srv://admin:8QnwGw3c8yFnAfLU@cluster0.jixbg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+var mongo_uri ='mongodb+srv://admin:vCc8NJ4QMPNzYlSc@cluster0.jixbg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose.Promise = global.Promise;
 mongoose.connect(mongo_uri, { useNewUrlParser: true ,useUnifiedTopology: true}).then(
   () => {
