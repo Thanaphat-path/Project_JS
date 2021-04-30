@@ -1,4 +1,4 @@
-let apimovie ="http://javap.app.ruk-com.cloud/api/name-movie"
+let apimovie ="http://projectsever.app.ruk-com.cloud/api/name-movie"
 let setmovie1 = document.querySelector(".set-movie1");
 let setmovie2 = document.querySelector(".set-movie2");
 let setmovie3 = document.querySelector(".set-movie3");
