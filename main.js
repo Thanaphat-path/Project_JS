@@ -1,5 +1,5 @@
 let apiUser ="http://javap.app.ruk-com.cloud/api/users"
-let apimovie ="http://javap.app.ruk-com.cloud/api/name-movie"
+let apimovie ="http://projectsever.app.ruk-com.cloud/api/name-movie"
 
 let setmovie1 = document.querySelector(".set-movie1");
 let setmovie11 = document.querySelector(".set-movie11");
@@ -35,6 +35,7 @@ async function getmovie1(){
     var movieObj = await axios.get(apimovie)
     let picture =movieObj.data[0].name
     setmovie1.innerHTML = picture
+    console.log("aasdasds")
 }
 async function getmovie11(){
     var movieObj = await axios.get(apimovie)
